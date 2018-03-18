@@ -15,7 +15,7 @@ import Foundation
                 messageAs: msg
             )
         }
-        
+         
         self.commandDelegate!.send(
             pluginResult,
             callbackId: command.callbackId
