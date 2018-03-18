@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-iHAC-Cordova" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>iHAC_Cordova</name>
+    <js-module name="iHAC_Cordova" src="www/iHAC_Cordova.js">
+        <clobbers target="iHAC_Cordova" />
+    </js-module>
+    
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="iHAC_Cordova">
+                <param name="ios-package" value="iHAC_Cordova" />
+            </feature>
+        </config-file>
+        
+        <!-- Swift plugin API -->
+        <header-file src="src/ios/EchoiHAC_BH.h" target-dir="iHAC_Plugin" />
+        <source-file src="src/ios/EchoiHAC_Framework.swift" target-dir="iHAC_Plugin"/>
+        
+        <!-- C source files -->
+        <source-file src="src/common/common/CommonCtrl.c" target-dir="iHAC_Plugin/common"/>
+        <header-file src="src/common/common/CommonCtrl.h" target-dir="iHAC_Plugin/common" />
+        <source-file src="src/common/common/DBManager.c" target-dir="iHAC_Plugin/common"/>
+        <header-file src="src/common/common/DBManager.h" target-dir="iHAC_Plugin/common" />
+        
+        <source-file src="src/common/echonet/EnlCtrl.c" target-dir="iHAC_Plugin/echonet"/>
+        <header-file src="src/common/echonet/EnlCtrl.h" target-dir="iHAC_Plugin/echonet" />        
+    </platform>
+</plugin>
